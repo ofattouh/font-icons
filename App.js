@@ -1,14 +1,26 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import { FontAwesome, Ionicons } from '@expo/vector-icons';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.iconRow}>
+          <FontAwesome style={styles.iconPadding} name="glass" size={48} color="green" />
+          <FontAwesome style={styles.iconPadding} name="beer" size={48} color="red" />
+          <FontAwesome style={styles.iconPadding} name="music" size={48} color="blue" />
+          <FontAwesome style={styles.iconPadding} name="taxi" size={48} color="#1CB5AD" />
+        </View>
+        <View style={styles.iconRow}>
+          <Ionicons style={styles.iconPadding} name="md-pizza" size={48} color="orange" />
+          <Ionicons style={styles.iconPadding} name="md-tennisball" size={48} color="maroon" />
+          <Ionicons style={styles.iconPadding} name="ios-thunderstorm" size={48} color="purple" />
+          <Ionicons style={styles.iconPadding} name="ios-happy" size={48} color="#DF7977" />
+        </View>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
@@ -18,4 +30,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  iconRow: {
+    flexDirection: 'row',
+  },
+  iconPadding: {
+    padding: 8,
+  }
 });
+
+// expo init my-app
+// npm start
+// https://icons.expo.fyi/
